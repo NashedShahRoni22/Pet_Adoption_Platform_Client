@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@material-tailwind/react";
 import AuthProvider from "./context/AuthProvider";
+import { Toaster } from "react-hot-toast";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <ThemeProvider>
       <AuthProvider>
         <App />
+        <Toaster/>
       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>
