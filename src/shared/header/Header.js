@@ -5,11 +5,14 @@ import {
   Button,
   IconButton
 } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
  
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
+
+  const {name} = useContext(AuthContext);
  
   useEffect(() => {
     window.addEventListener(
@@ -28,7 +31,7 @@ export default function Header() {
         className="p-1 font-semibold"
       >
         <Link to="/" className="flex items-center">
-          About Pet Adoption
+          Add a Post 
         </Link>
       </Typography>
       <Typography
