@@ -3,9 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import { useContext } from "react";
 import { toast } from "react-hot-toast";
+import SmallSpinner from "../../components/SmallSpinner";
 
 export default function Register() {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, loading } = useContext(AuthContext);
   const navigatae = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
@@ -59,8 +60,12 @@ export default function Register() {
             <Input size="lg" label="Email" name="email" />
             <Input type="password" size="lg" label="Password" name="password" />
           </div>
-          <Button className="mt-6" fullWidth type="submit">
+          <Button className="mt-6 flex gap-2 justify-center" fullWidth type="submit">
             Sign Up
+            {
+              loading && 
+              <SmallSpinner/>
+            }
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
             Already have an account?{" "}

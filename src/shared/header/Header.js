@@ -34,7 +34,7 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
-        <Link to="/" className="flex items-center">
+        <Link to="/addPost" className="flex items-center">
           Add a Post
         </Link>
       </Typography>
@@ -59,13 +59,13 @@ export default function Header() {
     <>
       <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
+          <Link
             as="a"
-            href="#"
+            to="/"
             className="mr-4 cursor-pointer py-1.5 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500 text-xl font-extrabold"
           >
             Pet Adoption Platform
-          </Typography>
+          </Link>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <Button
