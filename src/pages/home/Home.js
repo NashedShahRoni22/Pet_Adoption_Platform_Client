@@ -1,6 +1,7 @@
 import React from "react";
 import PetCards from "./PetCards";
 import LandingBanner from "./LandingBanner";
+import Contact from "./Contact";
 
 const Home = () => {
   
@@ -8,6 +9,7 @@ const Home = () => {
     <>
       <LandingBanner/>
       <PetCards />
+      <Contact/>
     </>
   );
 };
