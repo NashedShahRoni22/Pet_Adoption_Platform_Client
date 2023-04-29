@@ -5,6 +5,7 @@ import Login from "../pages/authentication/Login";
 import Register from "../pages/authentication/Register";
 import PrivateRoute from "./PrivateRoute";
 import AddPost from "../pages/addPost/AddPost";
+import PetDetails from "../components/PetDetails";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,11 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/petdetails/:id",
+        element: <PetDetails />,
+        loader: ({params}) => fetch(`http://localhost:5000/pets/${params.id}`)
       },
       {
         path: "/addPost",

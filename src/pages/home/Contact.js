@@ -23,7 +23,8 @@ const Contact = () => {
           <Button>Send</Button>
         </form>
       </div>
-      <p className="py-5 text-center bg-gradient-to-tr from-blue-400 to-purple-400 font-semibold text-white">Copyright Reserved by Pet Adoption Platform 2023</p>
+      <hr/>
+      <p className="py-5 text-center font-semibold shadow-xl bg-blue-100/60">Copyright Reserved by Pet Adoption Platform 2023</p>
     </div>
   );
 };
