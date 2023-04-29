@@ -61,11 +61,7 @@ export default function Register() {
             <Input type="password" size="lg" label="Password" name="password" />
           </div>
           <Button className="mt-6 flex gap-2 justify-center" fullWidth type="submit">
-            Sign Up
-            {
-              loading && 
-              <SmallSpinner/>
-            }
+          {loading ? <SmallSpinner /> : "Sign Up"}
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
             Already have an account?{" "}

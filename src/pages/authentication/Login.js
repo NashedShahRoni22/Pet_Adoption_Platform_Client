@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import SmallSpinner from "../../components/SmallSpinner";
 
 export default function Login() {
-  const { loginUser, loading } = useContext(AuthContext);
+  const { loginUser, loading, setLoading } = useContext(AuthContext);
   //private route setup
   const navigate = useNavigate();
   const location = useLocation();
@@ -26,26 +26,15 @@ export default function Login() {
         };
         console.log(currentUser);
         toast.success("Login Successfull!");
-        console.log("success");
-        //get jwt token
-        // fetch("https://chitromaya-server.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(currentUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     localStorage.setItem("ChitromayaUserToken", data.token);
         form.reset();
         navigate(from, { replace: true });
-        // });
       })
       .catch((error) => {
         const errorMessage = error.message;
         toast.error(errorMessage);
         console.log(errorMessage);
+        setLoading(false);
+        navigate("/register")
       });
   };
   return (
@@ -67,8 +56,7 @@ export default function Login() {
             fullWidth
             type="submit"
           >
-            Sign In
-            {loading && <SmallSpinner />}
+            {loading ? <SmallSpinner /> : "Sign In"}
           </Button>
           <Typography color="gray" className="mt-4 text-center font-normal">
             New here?{" "}

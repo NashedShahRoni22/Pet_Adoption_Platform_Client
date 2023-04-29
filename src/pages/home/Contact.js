@@ -8,7 +8,7 @@ const Contact = () => {
     height: 300,
   };
   return (
-    <div className="pt-20">
+    <div className="pt-20 container mx-auto">
       <h1 className="text-center mt-10 md:mt-0 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
         Contact us!
       </h1>

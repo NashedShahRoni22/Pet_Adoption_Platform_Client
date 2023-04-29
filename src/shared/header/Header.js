@@ -43,10 +43,20 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
+        <Link to="/myReviews" className="flex items-center text-purple-500">
+          My Reviews
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-semibold"
+      >
         {user?.uid ? (
           <button onClick={logOut} className="text-red-500">Log Out</button>
         ) : (
-          <Link to="/login" className="flex items-center text-blue-500">
+          <Link to="/login" className="flex items-center text-green-500">
             Log In
           </Link>
         )}
@@ -55,8 +65,8 @@ export default function Header() {
   );
 
   return (
-    <>
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
+    <nav className="container mx-auto">
+      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-xl py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
           <Link
             as="a"
@@ -110,6 +120,6 @@ export default function Header() {
           {navList}
         </MobileNav>
       </Navbar>
-    </>
+    </nav>
   );
 }

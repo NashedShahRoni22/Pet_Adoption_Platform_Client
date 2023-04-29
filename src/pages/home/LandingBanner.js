@@ -7,7 +7,7 @@ const LandingBanner = () => {
     height: 500,
   };
   return (
-    <section className="mx-5 md:flex items-center justify-center h-[60vh]">
+    <section className="container mx-auto md:flex items-center justify-center h-[60vh]">
       <div className="md:w-1/2">
         <h1 className="mt-10 md:mt-0 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-4xl md:text-6xl lg:text-8xl font-extrabold">
           Find the Right <br /> Pet For You

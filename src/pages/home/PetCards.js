@@ -15,7 +15,7 @@ const PetCards = () => {
   if (error) return "An error has occurred: " + error.message;
 
   return (
-    <section className="py-20 bg-blue-100/50 rounded-xl">
+    <section className="py-20 bg-blue-100/50 rounded-xl container mx-auto">
       <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold text-center">
         {pets.length} Pets Available for <br /> Adoption!
       </h2>
