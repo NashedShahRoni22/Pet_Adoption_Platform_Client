@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Button } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import BookingModal from "./BookingModal";
+import { AuthContext } from "../context/AuthProvider";
 const PetCard = ({ pet }) => {
+  const [open, setOpen] = useState(false);
+  const [bookingData, setBookingData] = useState("");
+
+  const { user } = useContext(AuthContext);
+
+  const handleOpen = () => {
+    setOpen(!open);
+    setBookingData(pet);
+  };
   const { _id, name, img, location, price } = pet;
   return (
     <div className="p-2 border hover:shadow-xl rounded-xl bg-white">
@@ -13,7 +24,7 @@ const PetCard = ({ pet }) => {
         />
         <div className="opacity-0 group-hover:opacity-100 absolute flex justify-center items-end top-0 rounded-xl h-full w-full bg-black/70">
           <Link to={`petdetails/${_id}`}>
-            <Button size="sm" className="mb-3">
+            <Button size="sm" className="mb-3" color="purple">
               Details
             </Button>
           </Link>
@@ -22,9 +33,23 @@ const PetCard = ({ pet }) => {
       <p className="font-semibold mt-3">Name: {name}</p>
       <p className="font-semibold">Location: {location}</p>
       <p className="font-semibold">Price: {price}</p>
-      <Button size="sm" className="mt-3 w-full">
-        Book Now
-      </Button>
+      {user?.email ? (
+        <Button size="sm" className="mt-3 w-full" onClick={handleOpen}>
+          Book Now
+        </Button>
+      ) : (
+        <NavLink to="/login">
+          <Button size="sm" className="mt-3 w-full" color="purple">
+            Login Now
+          </Button>
+        </NavLink>
+      )}
+
+      <BookingModal
+        open={open}
+        handleOpen={handleOpen}
+        bookingData={bookingData}
+      />
     </div>
   );
 };

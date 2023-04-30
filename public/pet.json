@@ -7,7 +7,7 @@
         "price":"Negotiable",
         "location":"Dhaka",
         "age":"1.6",
-        "Details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
+        "details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
     },
     {
         "name":"Tuntuni",
@@ -17,7 +17,7 @@
         "price":"Negotiable",
         "location":"Dhaka",
         "age":"1.6",
-        "Details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
+        "details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
     },
     {
         "name":"Luka",
@@ -27,7 +27,7 @@
         "price":"Negotiable",
         "location":"Dhaka",
         "age":"1.6",
-        "Details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
+        "details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
     },
     {
         "name":"Dulka",
@@ -37,7 +37,7 @@
         "price":"Negotiable",
         "location":"Dhaka",
         "age":"1.6",
-        "Details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
+        "details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
     },
     {
         "name":"Mulka",
@@ -47,7 +47,7 @@
         "price":"Negotiable",
         "location":"Dhaka",
         "age":"1.6",
-        "Details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
+        "details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
     },
     {
         "name":"Tinka",
@@ -57,6 +57,6 @@
         "price":"Negotiable",
         "location":"Dhaka",
         "age":"1.6",
-        "Details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
+        "details":"This Pet Belongs With Me from 2023. This love to eat fish and he is well trained to pee and poo in washroom"
     }
 ]

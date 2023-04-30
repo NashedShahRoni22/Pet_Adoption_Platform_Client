@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../components/Spinner";
 
 const PetCards = () => {
+  
+
   const { isLoading, error, data:pets } = useQuery({
     queryKey: ["petsData"],
     queryFn: () =>
@@ -13,6 +15,8 @@ const PetCards = () => {
   if (isLoading) return <Spinner/>;
 
   if (error) return "An error has occurred: " + error.message;
+
+  
 
   return (
     <section className="py-20 bg-blue-100/50 rounded-xl container mx-auto">
@@ -24,6 +28,7 @@ const PetCards = () => {
           <PetCard key={i} pet={pet} />
         ))}
       </div>
+      
     </section>
   );
 };
