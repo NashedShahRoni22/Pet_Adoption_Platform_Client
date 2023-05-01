@@ -4,8 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../components/Spinner";
 
 const PetCards = () => {
-  
-
   const { isLoading, error, data:pets } = useQuery({
     queryKey: ["petsData"],
     queryFn: () =>

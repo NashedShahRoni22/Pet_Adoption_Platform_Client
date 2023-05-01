@@ -8,7 +8,7 @@ import Spinner from "./Spinner";
 
 const PetDetails = () => {
   const data = useLoaderData();
-  const { _id, price, name, location, img, genre, categorey, age, details } =
+  const { _id, price, name, location, image, genre, categorey, age, details, postTime } =
     data;
   const { user } = useContext(AuthContext);
   const reviewsurl = `http://localhost:5000/reviews?petId=${_id}`;
@@ -31,7 +31,7 @@ const PetDetails = () => {
     const review = {
       petId: _id,
       petName: name,
-      petImg: img,
+      petImg: image,
       userName: user.displayName,
       userEmail: user.email,
       reviewMsg: comment,
@@ -59,15 +59,16 @@ const PetDetails = () => {
         Details of {name}
       </h2>
       <div className="md:flex gap-4 mt-5 shadow-xl p-5">
-        <img alt="pet_image" src={img} className="h-[200px] w-[200px]" />
+        <img alt="pet_image" src={image} className="h-[200px] w-[200px]" />
 
         <div className="font-semibold text-purple-500">
           <p>Name: {name}</p>
           <p>Genre: {genre}</p>
           <p>Categorey: {categorey}</p>
-          <p>Age: {age}</p>
+          <p>Age: {age} Years</p>
           <p>Location: {location}</p>
-          <p>Price: {price}</p>
+          <p>Price: {price} TK</p>
+          <p>Post Time: {postTime}</p>
           <p>Details: {details}</p>
         </div>
       </div>

@@ -13,12 +13,12 @@ const PetCard = ({ pet }) => {
     setOpen(!open);
     setBookingData(pet);
   };
-  const { _id, name, img, location, price } = pet;
+  const { _id, name, image, genre } = pet;
   return (
     <div className="p-2 border hover:shadow-xl rounded-xl bg-white">
       <div className="relative group">
         <img
-          src={img}
+          src={image}
           alt="pet_image"
           className="h-[200px] w-[200px] rounded-xl"
         />
@@ -31,8 +31,7 @@ const PetCard = ({ pet }) => {
         </div>
       </div>
       <p className="font-semibold mt-3">Name: {name}</p>
-      <p className="font-semibold">Location: {location}</p>
-      <p className="font-semibold">Price: {price}</p>
+      <p className="font-semibold">Genre: {genre}</p>
       {user?.email ? (
         <Button size="sm" className="mt-3 w-full" onClick={handleOpen}>
           Book Now

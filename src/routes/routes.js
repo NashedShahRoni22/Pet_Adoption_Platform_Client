@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddPost from "../pages/addPost/AddPost";
 import PetDetails from "../components/PetDetails";
 import UserReviews from "../pages/UserReviews/UserReviews";
+import MyPost from "../pages/myPost/MyPost";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddPost />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myPost",
+        element: (
+          <PrivateRoute>
+            <MyPost/>
           </PrivateRoute>
         ),
       },

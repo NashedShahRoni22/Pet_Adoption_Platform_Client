@@ -53,6 +53,16 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
+        <Link to="/myPost" className="flex items-center text-purple-500">
+          My Post
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-semibold"
+      >
         {user?.uid ? (
           <button onClick={logOut} className="text-red-500">Log Out</button>
         ) : (
