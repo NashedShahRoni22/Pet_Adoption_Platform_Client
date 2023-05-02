@@ -7,7 +7,7 @@ const MyPostCard = ({up}) => {
             <div>
                 <img alt='pet_img' src={image} className='h-[100px] w-[100px] rounded-l-xl' />
             </div>
-            <div className='text-purple-400 font-semibold'>
+            <div className=''>
                 <p>Pet Name: {name}</p>
                 <p>Pet Categorey: {categorey}</p>
                 <p>Pet Details: {price} TK</p>

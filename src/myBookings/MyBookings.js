@@ -1,41 +1,43 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../context/AuthProvider";
+import { AuthContext } from "../context/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "../../components/Spinner";
+import Spinner from "../components/Spinner";
 
-const UserReviews = () => {
-  const { user } = useContext(AuthContext);
-  const userReviewsUrl = `http://localhost:5000/myreviews?userEmail=${user.email}`;
+const MyBookings = () => {
+    const { user } = useContext(AuthContext);
+  const userBookingsUrl = `http://localhost:5000/mybookings?buyerEmail=${user.email}`;
   const {
     isLoading,
     error,
-    data: userReviews,
+    data: userBookings,
   } = useQuery({
     queryKey: ["petsData"],
-    queryFn: () => fetch(userReviewsUrl).then((res) => res.json()),
+    queryFn: () => fetch(userBookingsUrl).then((res) => res.json()),
   });
 
   if (isLoading) return <Spinner />;
 
   if (error) return "An error has occurred: " + error.message;
   return (
-    <div className="container mx-auto my-5">
+    <div className="container mx-auto p-5 my-5">
       <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
-        My Reviews
+        My Bookings
       </h2>
-      {userReviews.length ? (
+      {userBookings.length ? (
         <div className="mt-5 grid lg:grid-cols-2 gap-4">
-          {userReviews.map((pr, i) => (
+          {userBookings.map((pr, i) => (
             <div key={i} className="flex gap-4 items-center my-1 shadow-xl rounded-xl">
               <img
                 alt="pet_img"
-                src={pr.petImg}
+                src={pr.productImage}
                 className="h-[100px] w-[100px] rounded-l-xl"
               />
 
               <div className=""> 
-                <p>Pet Name: {pr.petName}</p>
-                <p>Review Message: {pr.reviewMsg}</p>
+                <p>Pet Name: {pr.name}</p>
+                <p>Pet Price: {pr.price}</p>
+                <p>Owner Email: {pr.ownerEmail}</p>
+                <p>Owner Number: {pr.ownerNumber}</p>
               </div>
             </div>
           ))}
@@ -49,4 +51,4 @@ const UserReviews = () => {
   );
 };
 
-export default UserReviews;
+export default MyBookings;

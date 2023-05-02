@@ -22,11 +22,11 @@ export default function Header() {
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
-      
-      {
-        user?.uid && 
-        <p className="font-semibold text-purple-500">Hello, {user.displayName}</p>
-      }
+      {user?.uid && (
+        <p className="font-semibold text-purple-500">
+          Hello, {user.displayName}
+        </p>
+      )}
       <Typography
         as="li"
         variant="small"
@@ -35,16 +35,6 @@ export default function Header() {
       >
         <Link to="/addPost" className="flex items-center text-purple-500">
           Add a Post
-        </Link>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-semibold"
-      >
-        <Link to="/myReviews" className="flex items-center text-purple-500">
-          My Reviews
         </Link>
       </Typography>
       <Typography
@@ -63,8 +53,30 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
+        <Link to="/myReviews" className="flex items-center text-purple-500">
+          My Reviews
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-semibold"
+      >
+        <Link to="/myBookings" className="flex items-center text-purple-500">
+          My Bookings
+        </Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-semibold"
+      >
         {user?.uid ? (
-          <button onClick={logOut} className="text-red-500">Log Out</button>
+          <button onClick={logOut} className="text-red-500">
+            Log Out
+          </button>
         ) : (
           <Link to="/login" className="flex items-center text-green-500">
             Log In
@@ -126,9 +138,7 @@ export default function Header() {
             </IconButton>
           </div>
         </div>
-        <MobileNav open={openNav}>
-          {navList}
-        </MobileNav>
+        <MobileNav open={openNav}>{navList}</MobileNav>
       </Navbar>
     </nav>
   );

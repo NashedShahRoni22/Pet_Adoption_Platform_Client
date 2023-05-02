@@ -8,8 +8,6 @@ Features:
 7. Seller will notify if any buyer make payment for his added pet post.
 
 User Task Left:
-1. Book a pet(One for One User!);
-2. See Bookings.
 3. Make Payment!
 
 ***IF User complete payment then post will be hide!

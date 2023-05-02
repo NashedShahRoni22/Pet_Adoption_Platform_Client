@@ -6,8 +6,9 @@ import Register from "../pages/authentication/Register";
 import PrivateRoute from "./PrivateRoute";
 import AddPost from "../pages/addPost/AddPost";
 import PetDetails from "../components/PetDetails";
-import UserReviews from "../pages/UserReviews/UserReviews";
+import UserReviews from "../pages/userReviews/UserReviews";
 import MyPost from "../pages/myPost/MyPost";
+import MyBookings from "../myBookings/MyBookings";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <UserReviews />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myBookings",
+        element: (
+          <PrivateRoute>
+            <MyBookings/>
           </PrivateRoute>
         ),
       },

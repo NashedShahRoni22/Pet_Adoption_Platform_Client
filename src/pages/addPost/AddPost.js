@@ -19,8 +19,8 @@ const AddPost = () => {
     const price = form.price.value;
     const location = form.location.value;
     const age = form.age.value;
-    const details = form.price.value;
-    const ownerEmail = form.userEmail.value;
+    const details = form.details.value;
+    const ownerEmail = user.email;
     const ownerNumber = form.userNumber.value; 
     const postTime = time;
 
@@ -70,7 +70,7 @@ const AddPost = () => {
       });
   };
   return (
-    <div className="container mx-auto p-5 my-10">
+    <div className="container mx-auto p-5 my-5">
       <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
         Add a Post
       </h2>
@@ -94,14 +94,8 @@ const AddPost = () => {
           </select>
           <Input label="Genre" name="genre" required />
           <Input label="Price" name="price" required />
-          <Input label="Location" name="location" required />
           <Input label="Age(Ex:1.5 Years)" name="age" required />
-          <Input
-            label="User Email"
-            defaultValue={user.email}
-            name="userEmail"
-            required
-          />
+          <Input label="Location" name="location" required />
           <Input label="Contact Number" name="userNumber" required />
         </div>
         <Textarea label="Enter Details" name="details" required />
