@@ -42,6 +42,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Booking confirmed!");
+          handleOpen();
         }
         else{
           toast.error(data.message);
@@ -51,7 +52,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
   }
 
   return (
-      <Dialog open={open} handler={handleOpen}>
+      <Dialog open={open}>
         <form onSubmit={handleBooking}>
         <DialogHeader>Booking {name}</DialogHeader>
         <DialogBody>
@@ -105,7 +106,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" onClick={handleOpen} color="blue" type="submit">
+          <Button variant="gradient" color="blue" type="submit">
             <span>Confirm</span>
           </Button>
         </DialogFooter>

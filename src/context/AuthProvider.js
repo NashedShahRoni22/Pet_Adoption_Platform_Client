@@ -18,8 +18,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   //spinner for loading state
   const [loading, setLoading] = useState(true);
-  //google sign in
-  //create user with email and password
   const createUser = (email, password) => {
     setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);

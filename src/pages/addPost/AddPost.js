@@ -45,6 +45,7 @@ const AddPost = () => {
           ownerEmail,
           ownerNumber,
           postTime,
+          isPaid: false,
         };
         form.reset();
         addProduct(pet);
@@ -72,7 +73,7 @@ const AddPost = () => {
   return (
     <div className="container mx-auto p-5 my-5">
       <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
-        Add a Post
+        Add a Pet
       </h2>
       <form className="mt-5" onSubmit={handleAddPost}>
         <div className="grid md:grid-cols-2 gap-4 mb-4">
@@ -99,7 +100,7 @@ const AddPost = () => {
           <Input label="Contact Number" name="userNumber" required />
         </div>
         <Textarea label="Enter Details" name="details" required />
-        <Button color="purple" type="submit">
+        <Button type="submit">
           Post Now
         </Button>
       </form>

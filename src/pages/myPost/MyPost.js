@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../../components/Spinner";
 import MyPostCard from "../../components/MyPostCard";
+import { toast } from "react-hot-toast";
 
 const MyPost = () => {
   const { user } = useContext(AuthContext);
@@ -11,6 +12,7 @@ const MyPost = () => {
     isLoading,
     error,
     data: userPosts,
+    refetch
   } = useQuery({
     queryKey: ["petsData"],
     queryFn: () => fetch(userPostUrl).then((res) => res.json()),
@@ -19,15 +21,32 @@ const MyPost = () => {
   if (isLoading) return <Spinner />;
 
   if (error) return "An error has occurred: " + error.message;
+
+  const handleDelete = (pr) => {
+    const agree = window.confirm(`Are you sure to delete ${pr.name}`);
+    if (agree) {
+      fetch(`http://localhost:5000/myposts/${pr._id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast.error(`${pr.name} deleted successfully!`);
+            refetch();
+          }
+        });
+    }
+  };
+
   return (
     <div className="container mx-auto p-5 my-5">
       <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
-        My Post
+        My Pets
       </h2>
       {userPosts.length ? (
         <div className="grid lg:grid-cols-2 gap-4 mt-5">
           {userPosts.map((up) => (
-            <MyPostCard up={up} key={up._id} />
+            <MyPostCard up={up} key={up._id} handleDelete={handleDelete}/>
           ))}
         </div>
       ) : (

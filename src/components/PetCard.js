@@ -23,7 +23,7 @@ const PetCard = ({ pet }) => {
           className="h-[200px] w-[200px] rounded-xl"
         />
         <div className="opacity-0 group-hover:opacity-100 absolute flex justify-center items-end top-0 rounded-xl h-full w-full bg-black/70">
-          <Link to={`petdetails/${_id}`}>
+          <Link to={`/petdetails/${_id}`}>
             <Button size="sm" className="mb-3">
               Details
             </Button>

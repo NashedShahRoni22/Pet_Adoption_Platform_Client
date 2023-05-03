@@ -34,7 +34,7 @@ export default function Header() {
         className="p-1 font-semibold"
       >
         <Link to="/addPost" className="flex items-center text-purple-500">
-          Add a Post
+          Add a Pet
         </Link>
       </Typography>
       <Typography
@@ -44,7 +44,7 @@ export default function Header() {
         className="p-1 font-semibold"
       >
         <Link to="/myPost" className="flex items-center text-purple-500">
-          My Post
+          My Pets
         </Link>
       </Typography>
       <Typography
@@ -54,7 +54,7 @@ export default function Header() {
         className="p-1 font-semibold"
       >
         <Link to="/myReviews" className="flex items-center text-purple-500">
-          My Reviews
+          Reviews
         </Link>
       </Typography>
       <Typography
@@ -64,7 +64,7 @@ export default function Header() {
         className="p-1 font-semibold"
       >
         <Link to="/myBookings" className="flex items-center text-purple-500">
-          My Bookings
+          Bookings
         </Link>
       </Typography>
       <Typography

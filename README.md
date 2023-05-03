@@ -7,8 +7,7 @@ Features:
 6. Buyers can book a pets.
 7. Seller will notify if any buyer make payment for his added pet post.
 
-User Task Left:
-3. Make Payment!
+also update booking isPaid !!! and show!!
 
 ***IF User complete payment then post will be hide!
 
