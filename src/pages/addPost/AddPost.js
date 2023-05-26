@@ -55,7 +55,7 @@ const AddPost = () => {
   };
   //save pet post in DB
   const addProduct = (product) => {
-    fetch("http://localhost:5000/pets", {
+    fetch("https://pet-adoption-platform-server.vercel.app/pets", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -22,7 +22,7 @@ const PetDetails = () => {
     postTime,
   } = data;
   const { user } = useContext(AuthContext);
-  const reviewsurl = `http://localhost:5000/reviews?petId=${_id}`;
+  const reviewsurl = `https://pet-adoption-platform-server.vercel.app/reviews?petId=${_id}`;
 
   const {
     isLoading,
@@ -47,7 +47,7 @@ const PetDetails = () => {
       userEmail: user.email,
       reviewMsg: comment,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://pet-adoption-platform-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -8,7 +8,7 @@ import AddPost from "../pages/addPost/AddPost";
 import PetDetails from "../components/PetDetails";
 import UserReviews from "../pages/userReviews/UserReviews";
 import MyPost from "../pages/myPost/MyPost";
-import MyBookings from "../myBookings/MyBookings";
+import MyBookings from "../pages/myBookings/MyBookings";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ export const router = createBrowserRouter([
       {
         path: "/petdetails/:id",
         element: <PetDetails />,
-        loader: ({params}) => fetch(`http://localhost:5000/pets/${params.id}`)
+        loader: ({params}) => fetch(`https://pet-adoption-platform-server.vercel.app/pets/${params.id}`)
       },
       {
         path: "/addPost",

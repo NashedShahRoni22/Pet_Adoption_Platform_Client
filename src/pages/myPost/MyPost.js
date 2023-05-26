@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 
 const MyPost = () => {
   const { user } = useContext(AuthContext);
-  const userPostUrl = `http://localhost:5000/myposts?ownerEmail=${user.email}`;
+  const userPostUrl = `https://pet-adoption-platform-server.vercel.app/myposts?ownerEmail=${user.email}`;
   const {
     isLoading,
     error,
@@ -25,7 +25,7 @@ const MyPost = () => {
   const handleDelete = (pr) => {
     const agree = window.confirm(`Are you sure to delete ${pr.name}`);
     if (agree) {
-      fetch(`http://localhost:5000/myposts/${pr._id}`, {
+      fetch(`https://pet-adoption-platform-server.vercel.app/myposts/${pr._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

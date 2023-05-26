@@ -7,7 +7,7 @@ const PetCards = () => {
   const { isLoading, error, data:pets } = useQuery({
     queryKey: ["petsData"],
     queryFn: () =>
-      fetch("http://localhost:5000/pets").then((res) => res.json()),
+      fetch("https://pet-adoption-platform-server.vercel.app/pets").then((res) => res.json()),
   });
 
   if (isLoading) return <Spinner/>;

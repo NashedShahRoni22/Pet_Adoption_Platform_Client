@@ -31,7 +31,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
       ownerEmail,
       ownerNumber,
     }
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://pet-adoption-platform-server.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

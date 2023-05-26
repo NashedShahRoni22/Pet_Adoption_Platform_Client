@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthProvider";
+import { AuthContext } from "../../context/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
-import Spinner from "../components/Spinner";
+import Spinner from "../../components/Spinner";
 import { AiOutlineDelete, AiFillMoneyCollect } from "react-icons/ai";
 import { Button, Tooltip } from "@material-tailwind/react";
 import { toast } from "react-hot-toast";
-import PaymentModal from "../components/PaymentModal";
+import PaymentModal from "../../components/PaymentModal";
 const MyBookings = () => {
   const { user } = useContext(AuthContext);
   const [paymentData, setPaymentData] = useState("");
@@ -15,7 +15,7 @@ const MyBookings = () => {
     setOpen(!open);
     setPaymentData(data);
   };
-  const userBookingsUrl = `http://localhost:5000/mybookings?buyerEmail=${user.email}`;
+  const userBookingsUrl = `https://pet-adoption-platform-server.vercel.app/mybookings?buyerEmail=${user.email}`;
   const {
     isLoading,
     error,
@@ -33,7 +33,7 @@ const MyBookings = () => {
   const handleDelete = (pr) => {
     const agree = window.confirm(`Are you sure to delete ${pr.name}`);
     if (agree) {
-      fetch(`http://localhost:5000/bookings/${pr._id}`, {
+      fetch(`https://pet-adoption-platform-server.vercel.app/bookings/${pr._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -48,7 +48,7 @@ const MyBookings = () => {
 
   const handlePayment = (data) => {
     setOpen(!open);
-    fetch(`http://localhost:5000/paidproducts/${data.productId}`, {
+    fetch(`https://pet-adoption-platform-server.vercel.app/paidproducts/${data.productId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -59,7 +59,7 @@ const MyBookings = () => {
         if (data.matchedCount > 0) {
           toast.success(`Payment done for ${paymentData.name} successfully!`);
           fetch(
-            `http://localhost:5000/paidbookingproducts/${paymentData._id}`,
+            `https://pet-adoption-platform-server.vercel.app/paidbookingproducts/${paymentData._id}`,
             {
               method: "PUT",
               headers: {
