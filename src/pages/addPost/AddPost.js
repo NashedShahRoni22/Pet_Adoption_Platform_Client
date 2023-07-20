@@ -1,4 +1,4 @@
-import { Button, Input, Textarea } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthProvider";
 import { useNavigate } from "react-router-dom";
@@ -21,7 +21,7 @@ const AddPost = () => {
     const age = form.age.value;
     const details = form.details.value;
     const ownerEmail = user.email;
-    const ownerNumber = form.userNumber.value; 
+    const ownerNumber = form.userNumber.value;
     const postTime = time;
 
     const formData = new FormData();
@@ -71,36 +71,85 @@ const AddPost = () => {
       });
   };
   return (
-    <div className="container mx-auto p-5 my-5">
-      <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
+    <div className="container mx-auto p-5 my-5 min-h-screen">
+      <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-[#2D1B69] to-black  text-2xl md:text-4xl font-extrabold">
         Add a Pet
       </h2>
       <form className="mt-5" onSubmit={handleAddPost}>
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          <Input label="Pet Name" name="name" required />
+        <span class="sr-only">Choose Pet photo</span>
+        <input
+          type="file"
+          name="image"
+          class="block w-full text-sm text-slate-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-violet-50 file:text-violet-700
+                hover:file:bg-violet-100"
+        />
+        <div className="grid md:grid-cols-2 gap-4 my-4">
           <input
+            className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400"
+            placeholder="Pet Name"
+            name="name"
+            required
+          />
+          {/* <input
             type="file"
             name="image"
             accept="image/*"
-            className="p-1 border-2 border-blue-400 rounded-lg"
+            className="p-1 border-2 border-gray-400 rounded-lg"
             required
-          />
+          /> */}
           <select
             label="Select Version"
             name="categorey"
-            className="p-1 border-2 border-blue-400 rounded-lg"
+            className="p-1 border-2 border-gray-400 rounded-lg"
           >
-            <option>Cat</option>
-            <option>Dog</option>
+            <option className="p-1 border-2">Cat</option>
+            <option className="p-1 border-2">Dog</option>
           </select>
-          <Input label="Genre" name="genre" required />
-          <Input label="Price" name="price" required />
-          <Input label="Age(Ex:1.5 Years)" name="age" required />
-          <Input label="Location" name="location" required />
-          <Input label="Contact Number" name="userNumber" required />
+          <input
+            className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400"
+            placeholder="Genre"
+            name="genre"
+            required
+          />
+          <input
+            className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400"
+            placeholder="Enter Price"
+            name="price"
+            required
+          />
+          <input
+            className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400"
+            placeholder="Enter Age(Ex:1.5 Years)"
+            name="age"
+            required
+          />
+          <input
+            className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400"
+            placeholder="Enter Location"
+            name="location"
+            required
+          />
+          <input
+            className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400"
+            placeholder="Enter Contact Number"
+            name="userNumber"
+            required
+          />
         </div>
-        <Textarea label="Enter Details" name="details" required />
-        <Button type="submit">
+        <textarea
+          className="focus:outline-[#2D1B69] rounded-lg px-4 py-2 border-2 border-gray-400 w-full"
+          rows="4"
+          cols="50"
+          label="Enter Details"
+          name="details"
+          required
+          placeholder="Enter Pet Details"
+        />
+        <Button type="submit" className="bg-[#2D1B69] mt-4">
           Post Now
         </Button>
       </form>

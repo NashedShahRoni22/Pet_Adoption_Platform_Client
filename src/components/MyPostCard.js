@@ -14,9 +14,9 @@ const MyPostCard = ({ up, handleDelete }) => {
           className="h-[100px] w-[100px] rounded-l-xl"
         />
         <div className="">
-          <p>Pet Name: {name}</p>
-          <p>Pet Categorey: {categorey}</p>
-          <p>Pet Details: {price} TK</p>
+          <p>Name: {name}</p>
+          <p>Categorey: {categorey}</p>
+          <p>Price: {price} BDT</p>
           <p>Post Time: {postTime}</p>
         </div>
       </div>

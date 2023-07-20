@@ -1,5 +1,4 @@
 import {
-  Navbar,
   MobileNav,
   Typography,
   IconButton,
@@ -23,7 +22,7 @@ export default function Header() {
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {user?.uid && (
-        <p className="font-semibold text-purple-500">
+        <p className="font-semibold text-white">
           Hello, {user.displayName}
         </p>
       )}
@@ -33,7 +32,7 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
-        <Link to="/addPost" className="flex items-center text-purple-500">
+        <Link to="/addPost" className="flex items-center text-white">
           Add a Pet
         </Link>
       </Typography>
@@ -43,7 +42,7 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
-        <Link to="/myPost" className="flex items-center text-purple-500">
+        <Link to="/myPost" className="flex items-center text-white">
           My Pets
         </Link>
       </Typography>
@@ -53,7 +52,7 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
-        <Link to="/myReviews" className="flex items-center text-purple-500">
+        <Link to="/myReviews" className="flex items-center text-white">
           Reviews
         </Link>
       </Typography>
@@ -63,7 +62,7 @@ export default function Header() {
         color="blue-gray"
         className="p-1 font-semibold"
       >
-        <Link to="/myBookings" className="flex items-center text-purple-500">
+        <Link to="/myBookings" className="flex items-center text-white">
           Bookings
         </Link>
       </Typography>
@@ -74,11 +73,11 @@ export default function Header() {
         className="p-1 font-semibold"
       >
         {user?.uid ? (
-          <button onClick={logOut} className="text-red-500">
+          <button onClick={logOut} className="bg-red-500 px-4 py-2 text-white rounded-full">
             Log Out
           </button>
         ) : (
-          <Link to="/login" className="flex items-center text-green-500">
+          <Link to="/login" className="bg-green-500 px-4 py-2 text-white rounded-full">
             Log In
           </Link>
         )}
@@ -87,15 +86,16 @@ export default function Header() {
   );
 
   return (
-    <nav className="container mx-auto">
-      <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-xl py-2 px-4 lg:px-8 lg:py-4">
-        <div className="flex items-center justify-between text-blue-gray-900">
+    <section className="bg-[#2D1B69]">
+      <div className="container mx-auto">
+      <navbar className="py-2 px-4 lg:px-8 lg:py-4">
+        <div className="flex items-center justify-between text-white">
           <Link
             as="a"
             to="/"
-            className="mr-4 cursor-pointer py-1.5 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500 text-xl font-extrabold"
+            className="uppercase mr-4 cursor-pointer py-1.5 text-white text-xl font-extrabold"
           >
-            Pet Adoption Platform
+            pet adoption platform
           </Link>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
@@ -139,7 +139,8 @@ export default function Header() {
           </div>
         </div>
         <MobileNav open={openNav}>{navList}</MobileNav>
-      </Navbar>
-    </nav>
+      </navbar>
+    </div>
+    </section>
   );
 }

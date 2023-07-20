@@ -38,8 +38,8 @@ export default function Login() {
       });
   };
   return (
-    <section className="flex justify-center py-20">
-      <Card color="transparent" shadow={false} className="shadow-xl p-5">
+    <section className="flex justify-center py-20 min-h-screen">
+      <Card color="transparent" shadow={false} className="shadow-xl h-fit p-5">
         <Typography variant="h4" color="blue-gray">
           Sign In
         </Typography>

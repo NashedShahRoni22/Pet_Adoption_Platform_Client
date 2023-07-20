@@ -56,7 +56,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
         <form onSubmit={handleBooking}>
         <DialogHeader>Booking {name}</DialogHeader>
         <DialogBody>
-          <p className="text-purple-400 font-semibold">Booking Information</p>
+          <p className="text-[#2D1B69] font-semibold">Booking Information</p>
           <div className="grid lg:grid-cols-2 gap-4 mt-3">
             <Input
               defaultValue={name}
@@ -89,7 +89,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
               readOnly
             />
           </div>
-          <p className="text-purple-400 font-semibold mt-5">
+          <p className="text-[#2D1B69] font-semibold mt-5">
             Buyer Information
           </p>
           <div className="grid lg:grid-cols-2 gap-4 mt-3">
@@ -106,7 +106,7 @@ export default function BookingModal({ open, handleOpen, bookingData }) {
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" color="blue" type="submit">
+          <Button className="bg-[#2D1B69]" type="submit">
             <span>Confirm</span>
           </Button>
         </DialogFooter>

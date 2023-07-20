@@ -43,8 +43,8 @@ export default function Register() {
       });
   };
   return (
-    <section className="py-20 flex justify-center">
-      <Card color="transparent" shadow={false} className="shadow-xl p-5">
+    <section className="py-20 flex justify-center min-h-screen">
+      <Card color="transparent" shadow={false} className="shadow-xl p-5 h-fit">
         <Typography variant="h4" color="blue-gray">
           Sign Up
         </Typography>

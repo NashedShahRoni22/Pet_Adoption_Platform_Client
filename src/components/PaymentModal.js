@@ -11,13 +11,13 @@ import { BsFillCreditCardFill, BsFillLockFill } from "react-icons/bs";
 export default function PaymentModal({ open, handleOpen, paymentData, handlePayment }) {
   return (
     <Dialog open={open}>
-        <DialogHeader>Payment For {paymentData.name}</DialogHeader>
+        <DialogHeader className="text-[#2D1B69]">Payment For {paymentData.name}</DialogHeader>
         <DialogBody>
           <div className="flex flex-col gap-4">
             <Typography
               variant="small"
               color="blue-gray"
-              className="font-medium"
+              className="font-semibold text-[#2D1B69]"
             >
               Personal Details
             </Typography>
@@ -51,7 +51,7 @@ export default function PaymentModal({ open, handleOpen, paymentData, handlePaym
             <Typography
               variant="small"
               color="blue-gray"
-              className="mb-4 font-medium"
+              className="mb-4 font-semibold text-[#2D1B69]"
             >
               Card Details
             </Typography>
@@ -87,7 +87,7 @@ export default function PaymentModal({ open, handleOpen, paymentData, handlePaym
             >
               <span>Cancel</span>
             </Button>
-            <Button size="sm" type="submit" onClick={()=> handlePayment(paymentData)}>
+            <Button className="bg-[#2D1B69]" size="sm" type="submit" onClick={()=> handlePayment(paymentData)}>
               Pay Now
             </Button>
           </div>

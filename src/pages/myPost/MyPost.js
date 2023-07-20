@@ -39,8 +39,8 @@ const MyPost = () => {
   };
 
   return (
-    <div className="container mx-auto p-5 my-5">
-      <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-2xl md:text-4xl font-extrabold">
+    <div className="container mx-auto p-5 my-5 min-h-screen">
+      <h2 className="text-transparent bg-clip-text bg-gradient-to-tr from-[#2D1B69] to-black  text-2xl md:text-4xl font-extrabold">
         My Pets
       </h2>
       {userPosts.length ? (
