@@ -2,6 +2,7 @@ import {
   MobileNav,
   Typography,
   IconButton,
+  Navbar,
 } from "@material-tailwind/react";
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -86,9 +87,9 @@ export default function Header() {
   );
 
   return (
-    <section className="bg-[#2D1B69]">
+    <section className="bg-[#2F1977]">
       <div className="container mx-auto">
-      <navbar className="py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="py-2 px-4 lg:px-8 lg:py-4 bg-transparent border-0" color="">
         <div className="flex items-center justify-between text-white">
           <Link
             as="a"
@@ -139,7 +140,7 @@ export default function Header() {
           </div>
         </div>
         <MobileNav open={openNav}>{navList}</MobileNav>
-      </navbar>
+      </Navbar>
     </div>
     </section>
   );

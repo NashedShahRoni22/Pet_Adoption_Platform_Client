@@ -12,7 +12,7 @@ const LandingBanner = () => {
         <h1 className="mt-10 md:mt-0 text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-pink-500  text-4xl md:text-6xl lg:text-8xl font-extrabold">
           Find the Right <br /> Pet For You
         </h1>
-        <p className="mt-5 md:text-xl md:font-semibold text-justify">
+        <p className="mt-5 md:text-xl md:font-semibold text-justify hidden">
           "Every human should not buy a dog but rescue in need and free him from
           the sufferings and give him love, care, and shelter." - Ridhima Badola
         </p>
